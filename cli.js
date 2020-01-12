@@ -8,9 +8,10 @@ const extend = require("extend");
 const humps = require("humps");
 const gitConfigPath = require("git-config-path")("global");
 
-const registries = require("./registries.json");
+const ZELASRC = path.join(process.env.HOME, ".zelasrc");
+const registries = require(ZELASRC) || {};
 const PKG = require("./package.json");
-const NRMRC = gitConfigPath;
+const GITINFO = gitConfigPath;
 
 const FIELD_SHOW_URL = "show-url";
 
@@ -150,12 +151,12 @@ function onAdd(name, url) {
 function getCurrentEmail(cbk) {
     const {
         user: { email }
-    } = getINIInfo(NRMRC);
+    } = getINIInfo(GITINFO);
     cbk(email);
 }
 
 function getCustomRegistry() {
-    const gitInfo = getINIInfo(NRMRC);
+    const gitInfo = getINIInfo(GITINFO);
     const {
         user: { name, email }
     } = gitInfo;
@@ -168,7 +169,7 @@ function getCustomRegistry() {
 }
 
 function setCustomRegistry(config, cbk) {
-    fs.writeFile("./registries.json", JSON.stringify(config), cbk);
+    fs.writeFile(ZELASRC, JSON.stringify(config), cbk);
 }
 
 function getAllRegistry() {
