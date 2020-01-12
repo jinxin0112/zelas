@@ -1,6 +1,6 @@
 {
     "name": "zelas",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "git email manager",
     "bin": "./cli.js",
     "repository": {
