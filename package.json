@@ -1,0 +1,39 @@
+{
+    "name": "zelas",
+    "version": "0.0.4",
+    "description": "git email manager",
+    "bin": "./cli.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jinxin0112/zelas"
+    },
+    "scripts": {
+        "star": "npm star zelas",
+        "pub": "np --no-yarn --no-cleanup --no-release-draft"
+    },
+    "keywords": [
+        "git",
+        "email"
+    ],
+    "author": "jinxin",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jinxin0112/zelas/issues"
+    },
+    "homepage": "https://github.com/jinxin0112/zelas",
+    "dependencies": {
+        "async": "^1.5.2",
+        "commander": "^2.9.0",
+        "extend": "^3.0.0",
+        "git-config-path": "^2.0.0",
+        "humps": "^2.0.1",
+        "ini": "^1.1.0",
+        "npm": "latest",
+        "only": "0.0.2",
+        "open": ">=6.0.0",
+        "request": "^2.72.0"
+    },
+    "devDependencies": {
+        "np": "^5.2.1"
+    }
+}
