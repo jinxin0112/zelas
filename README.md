@@ -32,8 +32,8 @@ Usage: zelas [options] [command]
     current                               Show the user name or email
       -e  --show-email                      Show email
     use <user>                            Change user
-    add <registry> <url>                  Add one user
-    del <registry>                        Delete one user
+    add <user> <email>                    Add one user
+    del <user>                            Delete one user
     help                                  Print this help
 
   Options:
