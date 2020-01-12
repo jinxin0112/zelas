@@ -12,7 +12,7 @@ const ZELASRC = path.join(process.env.HOME, ".zelasrc");
 const PKG = require("./package.json");
 const GITINFO = gitConfigPath;
 
-const FIELD_SHOW_URL = "show-url";
+const FIELD_SHOW_URL = "show-email";
 
 let registries;
 try {
@@ -101,6 +101,7 @@ function onUse(name) {
     if (typeof name === undefined) {
         execSync(`git config --global user.name ""`);
         execSync(`git config --global user.email ""`);
+        return 
     }
     var allRegistries = getAllRegistry();
     if (allRegistries.hasOwnProperty(name)) {
