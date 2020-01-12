@@ -9,11 +9,18 @@ const humps = require("humps");
 const gitConfigPath = require("git-config-path")("global");
 
 const ZELASRC = path.join(process.env.HOME, ".zelasrc");
-const registries = require(ZELASRC) || {};
 const PKG = require("./package.json");
 const GITINFO = gitConfigPath;
 
 const FIELD_SHOW_URL = "show-url";
+
+let registries;
+try {
+    registries = fs.readFileSync(ZELASRC);
+} catch (error) {
+    fs.writeFileSync(ZELASRC, "{}");
+    registries = {};
+}
 
 program.version(PKG.version);
 
