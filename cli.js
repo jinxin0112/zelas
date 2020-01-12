@@ -16,7 +16,7 @@ const FIELD_SHOW_URL = "show-url";
 
 let registries;
 try {
-    registries = fs.readFileSync(ZELASRC);
+    registries = JSON.parse(fs.readFileSync(ZELASRC, { encoding: "utf8" }));
 } catch (error) {
     fs.writeFileSync(ZELASRC, "{}");
     registries = {};
