@@ -22,7 +22,7 @@
     },
     "homepage": "https://github.com/jinxin0112/zelas",
     "dependencies": {
-        "async": "^1.5.2",
+        "async": "^2.6.4",
         "commander": "^2.9.0",
         "extend": "^3.0.0",
         "git-config-path": "^2.0.0",
